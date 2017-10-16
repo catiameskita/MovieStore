@@ -18,7 +18,7 @@ require_once ('CustomerManager.php');
 require_once ('StoreManager.php');
 require_once ('RentalManager.php');
 
-//Resources Created
+//Resources
 
 //myStoreManager
 
@@ -85,8 +85,8 @@ $myUserManager->addUser(new User(
         'state' => 'Active',
     )));
 
-
 $myUserManager->getUsers();
+
 
 //Customer Manager Debug
 echo '<br>';
@@ -104,7 +104,7 @@ $myCustomerManager->addCustomer(new Customer(
     )
 ));
 
-$myCustomerManager->redCostumersList();
+$myCustomerManager->getCustomers();
 
 //Store Manager Debug
 echo '<br>';
@@ -113,9 +113,7 @@ echo 'STORE MANAGER DEBUG';
 echo '<br>';
 echo '<br>';
 
-
-$myStoreManager->releaseMovie('Moulin Rouge');
-$myStoreManager->rentedMovies();
+$myStoreManager->getMovies();
 
 
 //Rental Manager Debug
@@ -125,21 +123,21 @@ echo 'RENTAL MANAGER DEBUG';
 echo '<br>';
 echo '<br>';
 
-$myRental = new Rental($myUserManager->getUser(3),$myCustomerManager->getCustomer(3),$myStoreManager->getMovie('Moulin Rouge'));
+$myRental = new Rental($myUserManager->getUser(2),$myCustomerManager->getCustomer(2),$myStoreManager->getMovie('IT'));
 
 $myRentalManager->addRental($myRental);
 
 $myRentalManager->rental($myRental);
 
+
 $myRentalManager->overdue();
 
-$myRentalManager->getRentals();
 
 
 
-var_dump($myRental->getDate());
-Echo '<br>';
-var_dump($myRental->getDevolution());
+
+
+
 
 //get availables
 //rent movie

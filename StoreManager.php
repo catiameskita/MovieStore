@@ -16,7 +16,14 @@
         }
 
         public function getMovies(){
-            Echo $this->list->getName().'<br>';
+
+         /** @var Movie $movie */
+            foreach ($this->list as $movie){
+
+               echo $movie->getName().'<br>';
+
+           }
+
 
         }
 
@@ -70,7 +77,13 @@
 
         public function getAvailability($name)
         {
-            Echo  $this->list[$name]->availability;
+            switch ($this->list[$name]->availability){
+
+                case 0: echo "Movie Available";
+                break;
+                case 1: echo "Movie Not Available";
+            }
+
         }
 
 

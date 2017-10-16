@@ -14,7 +14,7 @@ array_push($customers, array(
 
     'id' => '2',
     'name'=>'Bernardo',
-    'state'=>'Red'
+    'state'=>'Clean'
 ));
 
 array_push($customers, array(

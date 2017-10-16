@@ -11,7 +11,7 @@ array_push($movies, array(
 'director' => 'Andy Muschietti',
 'category' => 'Terror', 
 'rating' => '7.9',
-'availability' => '1'
+'availability' => '0'
 )); 
 
 array_push($movies, array(

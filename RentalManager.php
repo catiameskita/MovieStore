@@ -32,30 +32,19 @@ class RentalManager
 
                 $rental->getMovie()->setAvailability('1');
 
-                Echo 'Movie Rented<br>';
+                Echo '<strong>Movie Rented</strong><br>';
+                Echo "User: ".$rental->getUser()->getName().'<br>';
+                Echo "Customer: ".$rental->getCustomer()->getName().'<br>';
+                Echo "Movie: ".$rental->getMovie()->getName().'<br>';
+                Echo "Date : ".$rental->getDate()->format('H:i:s').'<br>';
 
             } else {
 
-                Echo 'Something Went Wrong, check the movie\'s
-                 availability and customer\'s state!<br>';
+                Echo 'Something Went Wrong!<br>';
             }
         }
     }
 
-    public function getRentals(){
-        /** @var Rental $rental */
-
-        foreach ($this->rentalList as $rental){
-
-           Echo $rental->getUser()->getName().'<br>';
-           Echo $rental->getCustomer()->getName().'<br>';
-           Echo $rental->getMovie()->getName().'<br>';
-           Echo $rental->getDate()->format('H:i:s').'<br>';
-
-
-        }
-
-    }
 
     public function overdue(){
 
@@ -64,8 +53,7 @@ class RentalManager
         /** @var Rental $rental */
         foreach ($this->rentalList as $rental){
 
-            $rentalDate = $rental->getDate();
-            $devolutionLimit = $rental->getDevolution();
+           $devolutionLimit = $rental->getDevolution();
 
             if($currentDate > $devolutionLimit){
 
@@ -73,6 +61,9 @@ class RentalManager
 
                     echo $rental->getMovie()->getName();
 
+            }else{
+
+                Echo "No OverdueList!";
             }
 
         }
